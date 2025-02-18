@@ -581,7 +581,7 @@
     return-void
 .end method
 
-.method public shareWchat()V
+.method public shareWhatsapp()V
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -594,7 +594,7 @@
 
     iget-object v0, v0, Lcom/gizthon/camera/activity/PreviewPhotoActivity$1;->this$0:Lcom/gizthon/camera/activity/PreviewPhotoActivity;
 
-    const-string v1, "com.tencent.mm"
+    const-string v1, "com.whatsapp"
 
     invoke-virtual {v0, v1}, Lcom/gizthon/camera/activity/PreviewPhotoActivity;->isInstallApp(Ljava/lang/String;)Z
 
@@ -727,9 +727,11 @@
     .line 85
     new-instance v0, Landroid/content/ComponentName;
 
-    const-string v4, "com.tencent.mm.ui.tools.ShareImgUI"
+    const-string v4, "com.whatsapp"
 
-    invoke-direct {v0, v1, v4}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v5, "com.whatsapp.ContactPicker"
+
+    invoke-direct {v0, v4, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
